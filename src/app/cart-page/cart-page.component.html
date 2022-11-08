@@ -1,0 +1,91 @@
+
+<ng-container *ngIf="products.length !=0">
+
+    <div class="container">
+
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Item Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products; let i = index">
+                            <td>{{i+1}}</td>
+                            
+                            <td style="width: 15%;">{{item.foodname}}</td>
+                            <td style="width: 15%;">{{item.category}}</td>
+                            <th style="width: 12%;">{{item.price}}</th>
+                            <td style="width: 12%;">{{item.quantity}}</td>
+                            <td style="width: 12%;">{{item.total}}</td>
+                            <td>
+                                <button (click)="removeItem(item)" class="btn btn-danger">Remove</button></td>
+                               
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><button (click)="emptycart()" class="btn btn-danger">EmptyCart</button></td>
+                            <td><button routerLink="/home" class="btn btn-primary">ShopMore</button></td>
+                            
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <button routerLink="/home" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</ng-container>
+
+
+<br>
+<br>
+<div *ngFor="let item of products" class="main-container1">
+   
+        <div class="bottom-part">
+            <div class="word-section">
+                <h1>Order Summary</h1>
+               
+            </div>
+            <div class="plan-section">
+               
+                <div class="annual-plan">
+                  
+                    <h2>Grand Total:</h2>
+                    
+                </div> 
+               <div class="annual-plan1">
+              
+                    <h2>${{grandTotal}}</h2>
+                </div>
+               
+            </div>
+            <div class="btn-section">
+                <button class="btn-payment btn" type="submit" routerLink="/payment">Proceed to Payment</button>
+                <button class="btn-submit btn" type="submit"routerLink="/home">Cancel Order</button>
+            </div>
+        </div>
+    </div>

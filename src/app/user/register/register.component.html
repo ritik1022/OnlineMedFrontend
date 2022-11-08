@@ -1,0 +1,78 @@
+
+<header>
+  <h1 class="logo">
+   Foodies
+  </h1>
+  <nav>
+
+  </nav>    
+ </header>
+ <div>
+ <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+ <defs>
+ <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+ </defs>
+ <g class="parallax">
+ <use xlink:href="#gentle-wave" x="48" y="0" fill="#ffb3b3" />
+ <use xlink:href="#gentle-wave" x="48" y="3" fill="#ff9999" />
+ <use xlink:href="#gentle-wave" x="48" y="5" fill="#ff6666" />
+ <use xlink:href="#gentle-wave" x="48" y="7" fill="#ff4d4d" />
+ </g>
+ </svg>
+ </div>
+<br>
+  <br>
+  <br>
+  <br>
+    <form>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="container">
+          <h1>Sign Up</h1>
+         
+          <div *ngIf="registerForm.controls['name'].invalid && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls['name']?.errors?.['required']">
+            Username is required.
+          </div>
+          </div>
+              <label for="username"><b>Username</b></label>
+            <input formControlName="name"type="text" name="username" placeholder="Enter Username" required>
+            <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="alert alert-danger">
+              <div *ngIf="registerForm.controls['email']?.errors?.['required']">
+              Email is required.
+            </div>
+            </div>
+          <label for="email"><b>Email</b></label>
+          <input  formControlName="email" type="text" placeholder="Enter Email" name="email" required>
+
+            <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="alert alert-danger">
+                <div *ngIf="registerForm.controls['password']?.errors?.['required']">
+                Password is required.
+              </div>
+            </div>
+          <label for="psw"><b>Password</b></label>
+          <input formControlName="password"type="password" placeholder="Enter Password" name="psw" required>
+       
+            <div *ngIf="registerForm.controls['address'].invalid && (registerForm.controls['address'].dirty || registerForm.controls['address'].touched)" class="alert alert-danger">
+                <div *ngIf="registerForm.controls['address']?.errors?.['required']">
+                Password is required.
+              </div>
+            </div>
+          <label for="address"><b>Address</b></label>
+          <input  formControlName="address" type="text" placeholder="Enter Address" name="address" required>
+        
+                  <label for="phone"><b>Phone Number</b></label>
+            <br>
+          
+           <input formControlName="mobilenumber" type="phone" name="phone" placeholder="812345678" required>
+    
+          <div class="clearfix">
+      
+            <button type="submit" class="btn">Sign Up</button>
+            <p> Already Have an account?<a routerLink="/userlogin">Sign In</a>
+          </div>
+        </div>
+      </form>
+      
+      
+

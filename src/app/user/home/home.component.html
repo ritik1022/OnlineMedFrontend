@@ -1,0 +1,49 @@
+
+<body>
+<app-navbar>
+    
+</app-navbar>
+
+
+<app-not-found [visible]="!foodData || foodData.length <= 0" resetLinkText="Reset Search"></app-not-found>
+<div>
+    <input type="text" placeholder="Search here!" [(ngModel)]="searchTerm" (ngModelChange)="search()" >
+</div>
+
+
+
+
+<table class="table mt-3">  
+
+    <thead>
+        <tr>
+        <th scope="col">Medicine Name</th>
+        <th scope="col">Category</th> 
+        <th scope="col">Medicine Type</th> 
+        <th scope="col">Description</th>
+        <th scope="col">Offers</th>
+        <th scope="col">Price</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of foodData">
+   
+    <td>{{row.foodname}}</td>
+    <td>{{row.category}}</td>
+    <td>{{row.cuisinename}}</td>
+    <td>{{row.description}}</td>
+    <td>{{row.offers}}</td>
+    <td>{{row.price}}</td>
+    <td>{{row.status}}</td>
+        <td> 
+        <button style="color:rgb(46, 42, 42)" type="button" class="btn btn-primary" 
+        data-bs-toggle="modal"data-bs-target="#exampleModal" class="btn btn-info" routerLink="/cart-page" (click)="addtoCart(row)"> Add to Cart</button>
+     </td>
+    
+        
+    </tr>
+    </tbody>
+    </table>
+</body>

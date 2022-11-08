@@ -1,0 +1,28 @@
+
+<app-navbar></app-navbar>
+<br>
+  <br>
+  <br>
+  <br>
+    <form>
+      <form [formGroup]="adminregisterForm" (ngSubmit)="registeradmin()">
+        <div class="container">
+          <h1>Sign Up</h1>
+         
+      
+              <label for="username"><b>Admin ID</b></label>
+            <input formControlName="email"type="text" name="email" placeholder="Enter Admin Email" required>
+         
+          <label for="psw"><b>Password</b></label>
+          <input formControlName="password"type="password" placeholder="Enter Password" name="psw" required>
+      
+    
+          <div class="clearfix">
+      
+            <button type="submit" class="btn">Register</button>
+          </div>
+        </div>
+      </form>
+      </form>
+      
+

@@ -1,0 +1,58 @@
+<div class="bg container-fluid px-1 px-md-2 px-lg-4 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-sm-11">
+      <div class="card border-0">
+        <div class="row justify-content-center">
+          
+          
+          <h3 class="mb-4">Card Checkout</h3>
+        </div>
+        <form [formGroup]="payBill" (ngSubmit)="paybill()">
+        <div class="row">
+          <div class="col-sm-7 border-line pb-3">
+            
+            
+              <p class="text-muted text-sm mb-0">Name on the card</p>
+              <input type="text" formControlName="name" name="name" placeholder="Name" size="15" />
+            
+         
+              <p class="text-muted text-sm mb-0">Address</p>
+              <div class="row px-2">
+                <input type="text" formControlName="address" name="address"placeholder="Address" size="18"/>
+              
+            </div>
+            
+              <p class="text-muted text-sm mb-0">Phone Number</p>
+              <div class="row px-3">
+                <input type="text" formControlname="mobilenumber" name="number"placeholder="9876543210"maxlength="13"/>
+            
+              
+              </div>
+          
+              <p class="text-muted text-sm mb-0">Card Number</p>
+              <div class="row px-3">
+                <input type="text"name="card-num"placeholder="0000 0000 0000 0000"size="18"id="cr_no"minlength="19" maxlength="19"/>
+            
+              
+              </div>
+            
+              <p class="text-muted text-sm mb-0">Expiry date</p>
+              <input type="text"name="exp" placeholder="MM/YY"  size="6" id="exp"minlength="5" maxlength="5"/>
+           
+              <p class="text-muted text-sm mb-0">CVV/CVC</p>
+              <input type="password" name="cvv" placeholder="000" size="1" minlength="3" maxlength="3"/>
+            </div>
+           
+              <p class="text-muted text-sm mb-0">Amount</p>
+              <input type="number" formControlName="amount" name="cvv" placeholder="Amount" size="10"/>
+            
+         <br>
+          <button type="submit" class="btn btn-red text-center mt-4"id="pay" >
+              PAY
+            </button>
+          </div>
+       </form>
+        </div>
+      </div>
+    </div>
+  </div>

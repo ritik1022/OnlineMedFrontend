@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+button{
+    border-color: #fff;
+    background: transparent;
+}
+
+*,*::after,*::before{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+} 
+html{
+	height: 100%;
+ font-size: 65.2%;
+	box-sizing: border-box;
+	font-family: Montserrat, sans-serif;
+ -webkit-font-smoothing: antialiased; 
+	font-weight: 400;
+}
+
+body{
+	height: 100%;
+	background: #e9ebee;
+	color: #1d2129;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	perspective: 1500px;
+}
+h1{
+		font-weight: 700;
+		font-size: 3.5em;
+		text-align: center;
+}
+.version{
+	position:absolute;
+	bottom: 1em;
+	right: 2em;
+	border-radius: 40px;
+	background: #ff4b2b;
+	color: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	padding: .8em 2em;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+}
+form input {
+    background: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+				font-size: 1.4em;
+}
+span{
+				color: #333;
+    font-size: 1.4em;
+				display: inline-block;
+    margin: 15px auto;
+				font-weight: 100;
+}
+.content{
+    width: 100%;
+    padding: 2em 4em;
+    text-align: center;
+}
+
+
+button {
+				display: block;
+				margin: 1em auto;
+    border-radius: 40px;
+    border: 1px solid #ff4b2b;
+    background: #ff4b2b;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+				padding: .8em 2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+	
+}
+button:hover {
+    cursor:pointer;
+}
+button:active {
+    transform: scale(.95);
+}
+button:focus {
+    outline: none;
+}
+
+
+
+#container{
+	width: 95%;
+	max-width: 800px;
+	height: 500px;
+	position: relative;
+	border-radius: 20px;
+	box-shadow: 0 14px 28px -10px rgba(0, 0, 0, .1), 0 10px 10px -10px rgba(0, 0, 0, .02);
+	transform-style: preserve-3d;
+}
+	div{
+		position: absolute;
+		width: 50%;
+		min-width: 350px;
+		height: 100%;
+		top:0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
+	}
+
+
+.content{
+		width: 100%;
+		padding: 2em 4em;
+		text-align: center;
+		
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+body{
+ margin: 0;
+}
+header{
+ position: fixed;
+ width: 100%;
+ height:10%;
+ top: 0;
+ display: flex;
+ justify-content: space-evenly;
+ place-items: center;
+ background-color: rgb(247, 82, 31);
+ z-index: 2;
+}
+.logo{
+ font-family: smooch;
+ color: white;
+ font-size: 3.3em;
+}
+
+header nav button{
+ background-color: transparent;
+ border: 0;
+ font-family: quicksand;
+ color: rgb(0, 0, 0);
+ text-transform: uppercase;
+ font-size: 1.5em;
+ cursor: pointer;
+ transition-delay: 0s;
+ transition-duration: 1s;
+}
+header nav button:hover{
+ color: rgba(0, 0, 0, 0.87);
+ transform: translate(0px, -4px);
+ text-shadow: 0 6px 6px rgba(0,0,0,1);
+}
+.order-online{
+ width: 200px;
+ height: 50px;
+ border-radius: 25px;
+ border: 0;
+ background-color: rgba(248, 98, 52, 0.87);
+ color: white;
+ font-family: montserrat;
+ cursor: pointer;
+ transition: 0.6s;
+}
+.order-online:hover{
+ transform: translate(0px, -4px);
+ box-shadow: 0 6px 6px rgba(0,0,0,.2);
+}
+
+/* WAVES BENEATH HEADER */
+
+.waves {
+ transform: rotate(180deg) scale(1, 0.2);
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+ margin-top: 33px;
+}
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 4s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 17s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
