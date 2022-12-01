@@ -15,24 +15,30 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminregisterComponent } from './adminregister/adminregister.component';
 import { crudComponent } from './crud/crud.component';
 import { PaymentComponent } from './payment/payment.component';
-import { TransactionComponent } from './transaction/transaction.component';
 import { DefaultComponent} from './default/default.component'
+import { TransactComponent } from './transact/transact.component';
+import { UserListComponent } from './user-list/user-list.component';
+
+import { FooterComponent } from './footer/footer.component';
+import { RealPaymentComponent } from './real-payment/real-payment.component';
+
 const routes: Routes = [
-  {path:'search/:searchTerm', component:HomeComponent},
-  {path:'tag/:tag', component:HomeComponent},
-  {path:'payment',component:PaymentComponent},
-  
-  {path:'cart-page', component: CartPageComponent},
+  { path :'search/:searchTerm', component:HomeComponent},
+  { path :'tag/:tag', component:HomeComponent},
+  { path : 'payment',component:PaymentComponent},
+  {path:'transact',component:TransactComponent},
+  { path :'cart-page', component: CartPageComponent},
   { path :'register', component: RegisterComponent},
   { path :'crud', component:crudComponent},
   { path :'userlogin', component: UserloginComponent},
   { path :'home', component: HomeComponent},
   { path :'adminlogin', component: AdminloginComponent},
-  { path :'transaction', component: TransactionComponent},
- 
+  {path: 'rpayment', component:RealPaymentComponent},
   { path :'adminregister', component: AdminregisterComponent},
+  {path:'user-list',component:UserListComponent},
   { path :'cart', component: CartPageComponent},
   { path :'', component: DefaultComponent},
+  { path :'footer', component: FooterComponent}
   
 
 ];

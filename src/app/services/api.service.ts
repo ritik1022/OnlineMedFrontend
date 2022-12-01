@@ -9,12 +9,18 @@ import {map} from 'rxjs/operators'
   export class ApiService {
 
     constructor(private http : HttpClient) { }
-
     getAllTrans(){
-        return this.http.get<any>('http://localhost:8082/alltransactions').pipe(
+        return this.http.get<any>('http://localhost:8443/alltransactions').pipe(
         map((res: any) => {
           return res;
         }))
 
     }
+    getAllUsers(){
+      return this.http.get<any>('http://localhost:8443/allusers').pipe(
+      map((res: any) => {
+        return res;
+      }))
+
+  }
 }

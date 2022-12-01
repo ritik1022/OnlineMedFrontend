@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Cart } from 'src/app/shared/models/Cart';
 import { CartItem } from 'src/app/shared/models/CartItem';
-import { FoodModel } from 'src/app/shared/models/Food';
+import { MedicineModel } from 'src/app/shared/models/Medicine';
 import { ProductComponent } from '../product/product.component';
 
 @Injectable({
@@ -31,16 +31,16 @@ export class CartService {
   getTotalPrice() : number{
     let grandTotal = 0;
     this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
+      grandTotal += a.medicinePrice;
     })
     return grandTotal;
   }
   getTotalQuantity() : number{
-    let granQuantity = 0;
+    let grandQuantity = 0;
     this.cartItemList.map((a:any)=>{
-      granQuantity += a.total;
+      grandQuantity += a.total;
     })
-    return granQuantity;
+    return grandQuantity;
   }
   removeCartItem(product: any){
     this.cartItemList.map((a:any, index:any)=>{

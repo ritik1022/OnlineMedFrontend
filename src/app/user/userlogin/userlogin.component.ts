@@ -18,10 +18,10 @@ export class UserloginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginform=this.formBuilder.group({
-      email: ['', Validators.required, Validators.email], 
-      password:['', Validators.required,
+      email: ['', [Validators.required, Validators.email]], 
+      password:['', [Validators.required,
       Validators.minLength(6),
-      Validators.maxLength(40)]
+      Validators.maxLength(40)]]
     })
   }
 login():String{
@@ -56,7 +56,7 @@ login():String{
     })
   };
   
-   this.http.post<any>("http://localhost:8082/signin", this.loginform.value, httpOptions)
+   this.http.post<any>("http://localhost:8443/signin", this.loginform.value, httpOptions)
   .subscribe(res=>{
     if((res===true)){
       alert("Successfully login !!!")

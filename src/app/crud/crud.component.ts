@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup, Validators} from '@angular/forms';
-import { FoodModel } from './crud.model';
+import { MedicineModel } from './crud.model';
 import { ApiService } from '../shared/api.service';
 
 @Component({
@@ -12,10 +12,8 @@ import { ApiService } from '../shared/api.service';
 })
 export class crudComponent implements OnInit {
   formValue!: FormGroup;
-  foodmodelobj: FoodModel = new FoodModel();
-
-  foodData!: any;
-
+  medicinemodelobj: MedicineModel = new MedicineModel();
+  medicineData!: any;
   showAdd!: boolean;
   showUpdate!: boolean;
 
@@ -23,38 +21,33 @@ export class crudComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      cuisinename: ['', Validators.required],
-      category: ['', Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(20)],
-      description: [''],
-      foodname: [''],
-      offers:[''],
-      price: [''],
-      status: [''],
+     medicineDescription: [''],
+      medicineName: [''],
+      medicinePrice: [''],
+      instock: [''],
 
     });
-    this.getAllFood();
+    this.getAllMedicine();
   }
  
 
-  postFoodDetails() {
-    this.foodmodelobj.cuisinename = this.formValue.value.cuisinename;
-    this.foodmodelobj.category = this.formValue.value.category;
-    this.foodmodelobj.description = this.formValue.value.description;
-    this.foodmodelobj.foodname = this.formValue.value.foodname;
-    this.foodmodelobj.offers = this.formValue.value.offers;
-    this.foodmodelobj.price = this.formValue.value.price;
-    this.foodmodelobj.status = this.formValue.value.status;
+  postMedicineDetails() {
+ 
+  
+    this.medicinemodelobj.medicineDescription = this.formValue.value.medicineDescription;
+    this.medicinemodelobj.medicineName = this.formValue.value.medicineName;
+    
+    this.medicinemodelobj.medicinePrice = this.formValue.value.medicinePrice;
+    this.medicinemodelobj.instock = this.formValue.value.instock;
 
-    this.api.postFoodDetails(this.foodmodelobj).subscribe(
+    this.api.postMedicineDetails(this.medicinemodelobj).subscribe(
       (res) => {
         console.log(res);
         alert('Item added Successfully');
         this.formValue.reset();
         let ref = document.getElementById('cancel');
         ref?.click();
-        this.getAllFood();
+        this.getAllMedicine();
       },
       (err) => {
         alert('something worng happen');
@@ -62,51 +55,46 @@ export class crudComponent implements OnInit {
     );
   }
 
-  getAllFood() {
-    this.api.getAllFood().subscribe((res) => {
-      this.foodData = res;
+  getAllMedicine() {
+    this.api.getAllMedicine().subscribe((res) => {
+      this.medicineData = res;
     });
   }
 
 
-  deleteFood(row: any) {
-    this.api.deleteFood(row.id).subscribe((res) => {
+  deleteMedicine(row: any) {
+    this.api.deleteMedicine(row.medicineId).subscribe((res) => {
       alert('Item Deleted Sucessfully');
-      this.getAllFood();
+      this.getAllMedicine();
     })
   }
   
   onEdit(row: any) {
-    this.foodmodelobj.id = row.id;
-    this.formValue.controls['cuisiname'].setValue(row.cuisinename);
-    this.formValue.controls['category'].setValue(row.category);
-    this.formValue.controls['description'].setValue(row.description);
-    this.formValue.controls['foodname'].setValue(row.foodname);
-    this.formValue.controls['offers'].setValue(row.offers);
-    this.formValue.controls['price'].setValue(row.price);
-    this.formValue.controls['status'].setValue(row.status);
+    this.medicinemodelobj.medicineId = row.medicineId;
+   this.formValue.controls['description'].setValue(row.medicineDescription);
+    this.formValue.controls['medicineName'].setValue(row.medicineName);
+    this.formValue.controls['medicinePrice'].setValue(row.medicinePrice);
+    this.formValue.controls['instock'].setValue(row.instock);
     this.showAdd = false;
     this.showUpdate = true;
   }
-  updateFoodDetails() {
-    this.foodmodelobj.cuisinename = this.formValue.value.cuisinename;
-    this.foodmodelobj.category = this.formValue.value.category;
-    this.foodmodelobj.description = this.formValue.value.description;
-    this.foodmodelobj.foodname = this.formValue.value.foodname;
-    this.foodmodelobj.offers = this.formValue.value.offers;
-    this.foodmodelobj.price = this.formValue.value.price;
-    this.foodmodelobj.status = this.formValue.value.status;
-    this.api.updateFoodDetails(this.foodmodelobj, this.foodmodelobj.id)
+  updateMedicine() {
+    this.medicinemodelobj.medicineDescription = this.formValue.value.medicineDescription;
+    this.medicinemodelobj.medicineName = this.formValue.value.medicineName;
+    
+    this.medicinemodelobj.medicinePrice = this.formValue.value.medicinePrice;
+    this.medicinemodelobj.instock = this.formValue.value.instock;
+    this.api.updateMedicine(this.medicinemodelobj, this.medicinemodelobj.medicineId)
       .subscribe((res) => {
         alert('Updated');
         let ref = document.getElementById('Cancel');
         ref?.click();
         this.formValue.reset();
-        this.getAllFood();
+        this.getAllMedicine();
       });
   }
 
-  clickAddFood() {
+  clickAddMedicine() {
     this.formValue.reset();
     this.showAdd = true;
     this.showUpdate = false;

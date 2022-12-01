@@ -18,13 +18,17 @@ import { HeaderComponent } from './header/header.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ApiService } from './shared/api.service';
-import { Food } from './food';
 import { AdminregisterComponent } from './adminregister/adminregister.component';
 import { ProductComponent } from './product/product.component';
 import { crudComponent } from './crud/crud.component';
 import { CartItem } from './shared/models/CartItem';
 import { PaymentComponent } from './payment/payment.component';
 import { DefaultComponent } from './default/default.component';
+import { TransactComponent } from './transact/transact.component';
+import { FooterComponent } from './footer/footer.component';
+import { RealPaymentComponent } from './real-payment/real-payment.component';
+import { UserListComponent } from './user-list/user-list.component';
+
 
 
 
@@ -41,7 +45,7 @@ import { DefaultComponent } from './default/default.component';
     CartPageComponent,  
     SearchComponent,
     HeaderComponent,
-   
+    
     CartPageComponent,
     NotFoundComponent,
     AdminregisterComponent,
@@ -49,6 +53,11 @@ import { DefaultComponent } from './default/default.component';
     crudComponent,
     PaymentComponent,
     DefaultComponent,
+    TransactComponent,
+    FooterComponent,
+    RealPaymentComponent,
+    UserListComponent
+   
     
   ],
   imports: [

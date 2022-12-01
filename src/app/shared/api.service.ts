@@ -8,28 +8,28 @@ import {map} from 'rxjs/operators'
 export class ApiService {
 
   constructor(private http : HttpClient) { }
-  postFoodDetails(data : any){
-    return this.http.post<any>("http://localhost:8082/addfood",data)
+  postMedicineDetails(data : any){
+    return this.http.post<any>("http://localhost:8443/addmedicine",data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
-  getAllFood() {
-    return this.http.get<any>('http://localhost:8082/getallfooddetails').pipe(
+  getAllMedicine() {
+    return this.http.get<any>('http://localhost:8443/getallMedicinedetails').pipe(
       map((res: any) => {
         return res;
       }))
   }
 
-  updateFoodDetails(data: any, id: number) {
-    return this.http.put<any>('http://localhost:8082/updatefood/' + id, data).pipe(
+  updateMedicine(data: any, id: number) {
+    return this.http.put<any>('http://localhost:8443/updatemedicine/' + id, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  deleteFood(id: number) {
-    return this.http.delete<any>('http://localhost:8082/deletefood/' + id).pipe(
+  deleteMedicine(id: number) {
+    return this.http.delete<any>('http://localhost:8443/deletemedicine/' + id).pipe(
       map((res: any) => {
         return res;
       })

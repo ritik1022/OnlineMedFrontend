@@ -4,7 +4,7 @@ import { Cart } from '../shared/models/Cart';
 import { CartItem } from '../shared/models/CartItem';
 import { CartService } from '../services/cart.service';
 
-import { FoodModel } from '../shared/models/Food';
+import { MedicineModel } from '../shared/models/Medicine';
 
 @Component({
   selector: 'app-cart-page',

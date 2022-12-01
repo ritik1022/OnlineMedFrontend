@@ -1,13 +1,13 @@
-import { FoodModel } from "./Food";
+import { MedicineModel } from "./Medicine";
 
 export class CartItem{
-    constructor(food:FoodModel){
-      this.food = food;  
+    constructor(medicine:MedicineModel){
+      this.medicine = medicine;  
     }
-    food:FoodModel;
+    medicine:MedicineModel;
     quantity:number = 1;
 
     get price():number{
-        return this.food.price * this.quantity;
+        return this.medicine.medicinePrice * this.quantity;
     }
 }

@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     })
   }
 register(){
-  this.http.post<any>(" http://localhost:8082/signup", this.registerForm.value)
+  this.http.post<any>(" http://localhost:8443/signup", this.registerForm.value)
 .subscribe(res=>{
   alert("Successfully Registered !!!")
   this.registerForm.reset();

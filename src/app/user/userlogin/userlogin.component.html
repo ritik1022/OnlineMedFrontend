@@ -1,10 +1,8 @@
 <header>
-    <h1 class="logo">
-     Foodies
+    <h1 class="logo" routerLink="/">
+     Pharmacy
     </h1>
-    <nav>
-     <button routerLink="/register"><a>SignUp</a></button>
-    </nav>    
+   
    </header>
   
    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,15 +22,22 @@
 <div id="container">
     <div class="login">
         <div class="content">
-                <h1>Welcome</h1>
+                <h1>Log In</h1>
             <form [formGroup]="loginform"  (ngSubmit)="login()">
 
                 <input formControlName="email" type="email" placeholder="Email">
                 <input formControlName="password" type="password" placeholder="password">
                 
                 <span class="clearfix"></span>
-                <button>Log In</button>
+                <button type="submit">Log In</button>
+                
+                    <button routerLink="/register">New User?&nbsp; &nbsp;<a class="signup">SignUp</a></button>
+                      
             </form>
+            
             </div>
             </div>
+        
             </div>
+           <app-footer></app-footer>
+            

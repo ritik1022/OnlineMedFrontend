@@ -1,5 +1,22 @@
-
-<app-navbar></app-navbar>
+<header>
+    <h1 class="logo"routerLink="/">
+     Pharmacy
+    </h1>
+   
+   </header>
+  
+   <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+   viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+   <defs>
+   <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+   </defs>
+   <g class="parallax">
+   <use xlink:href="#gentle-wave" x="48" y="0" fill="#ffb3b3" />
+   <use xlink:href="#gentle-wave" x="48" y="3" fill="#ff9999" />
+   <use xlink:href="#gentle-wave" x="48" y="5" fill="#ff6666" />
+   <use xlink:href="#gentle-wave" x="48" y="7" fill="#ff4d4d" />
+   </g>
+   </svg>
 <!-- Section: Design Block -->
 <section class="text-center text-lg-start">
     <style>
@@ -12,9 +29,9 @@
             }
         }
     </style>
-
+</section>
     <!-- Jumbotron -->
-    <div class="container py-4">
+    <div class="container ">
         <div class="row g-0 align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
                 <div class="card cascading-right" style=" background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
@@ -25,6 +42,7 @@
 
                             <!-- Email input -->
                             <div class="form-outline mb-4">
+                            
                                 <div *ngIf="loginform.controls['email'].invalid && (loginform.controls['email'].dirty || loginform.controls['email'].touched)" class="alert alert-danger">
                                     <div *ngIf="loginform.controls['email']?.errors?.['required']">
                                       Email is required.
@@ -43,8 +61,25 @@
                 </div>
                 <input  type="password" formControlName="password" class="form-control"/>
                 <label class="form-label" for="form3Example4">Password</label>
-</div>
+                <section>
+                    
+                </section>
 <!-- Submit button -->
 <button type="submit" class="btn btn-primary btn-block mb-4"> Login </button>
+</div>
+</form>
+                </div>
+                </div>
+                </div>
+ 
+
+
+</div>
+    </div>
+
+
+<div>
+<app-footer></app-footer>
+</div>
 
                           

@@ -11,7 +11,6 @@
                         <tr>
                             <th>Sr.No</th>
                             <th>Item Name</th>
-                            <th>Category</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total</th>
@@ -22,11 +21,10 @@
                         <tr *ngFor="let item of products; let i = index">
                             <td>{{i+1}}</td>
                             
-                            <td style="width: 15%;">{{item.foodname}}</td>
-                            <td style="width: 15%;">{{item.category}}</td>
-                            <th style="width: 12%;">{{item.price}}</th>
-                            <td style="width: 12%;">{{item.quantity}}</td>
-                            <td style="width: 12%;">{{item.total}}</td>
+                            <td style="width: 15%;">{{item.medicineName}}</td>
+                            <td style="width: 15%;">{{item.medicinePrice}}</td>
+                            <td style="width: 15%;">{{item.quantity}}</td>
+                            <td style="width: 15%;">{{item.medicinePrice}}</td>
                             <td>
                                 <button (click)="removeItem(item)" class="btn btn-danger">Remove</button></td>
                                
@@ -84,7 +82,7 @@
                
             </div>
             <div class="btn-section">
-                <button class="btn-payment btn" type="submit" routerLink="/payment">Proceed to Payment</button>
+                <button class="btn-payment btn" type="submit" routerLink="/rpayment">Proceed to Payment</button>
                 <button class="btn-submit btn" type="submit"routerLink="/home">Cancel Order</button>
             </div>
         </div>

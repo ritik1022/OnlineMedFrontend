@@ -21,7 +21,7 @@ export class AdminregisterComponent implements OnInit {
     })
   }
 registeradmin(){
-  this.http.post<any>(" http://localhost:8082/createadminaccount", this.adminregisterForm.value)
+  this.http.post<any>(" http://localhost:8443/createadminaccount", this.adminregisterForm.value)
 .subscribe(res=>{
   alert("Successfully Registered !!!")
   this.adminregisterForm.reset();

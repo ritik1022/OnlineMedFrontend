@@ -1,5 +1,5 @@
 
-import { FoodModel } from 'src/app/shared/models/Food';
+import { MedicineModel } from 'src/app/shared/models/Medicine';
 import { Component, Injectable, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
 import { ApiService } from './api.service';
@@ -17,14 +17,14 @@ import {map} from 'rxjs/operators'
 export class HomeComponent implements OnInit {
 
   searchTerm:any;
-  foodmodelobj: FoodModel = new FoodModel();
+  medicinemodelobj: MedicineModel = new MedicineModel();
 
-  foodData!: any;
+  medicineData!: any;
 
   showAdd!: boolean;
   showUpdate!: boolean;
   formValue!: FormGroup;
-  veg!: string;
+  
   
  
   constructor(private router:Router, private activatedRoute: ActivatedRoute,private formbuilder: FormBuilder,private api: ApiService,
@@ -32,25 +32,23 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      category :[''],
-      cuisinename: [''],
-      description: [''],
-      foodname: [''],
-      offers:[''],
-      price: [''],
-      status: [''],
+     
+      medicineDescription: [''],
+      medicineName: [''],
+      medicinePrice: [''],
+      instock: [''],
 
     });
    
-    this.getAllFood();
+    this.getAllMedicine();
 
   }
-  getAllFood() {
-    this.api.getFood().subscribe((res: any) => {
-      this.foodData = res;
+  getAllMedicine() {
+    this.api.getMedicine().subscribe((res: any) => {
+      this.medicineData = res;
       
       
-      this.foodData.forEach((a:any)=>{
+      this.medicineData.forEach((a:any)=>{
         Object.assign(a,{quantity:1,total:a.price});
       });
     })
@@ -60,11 +58,11 @@ export class HomeComponent implements OnInit {
     
     if(this.searchTerm==""){
       console.log("correct")
-      this.getAllFood();
+      this.getAllMedicine();
     }else{
-      this.foodData=this.foodData.filter((res: any)=>{
+      this.medicineData=this.medicineData.filter((res: any)=>{
         console.log(res)
-       return res.foodname.toLowerCase().match(this.searchTerm.toLowerCase());
+       return res.medicineName.toLowerCase().match(this.searchTerm.toLowerCase());
       // return this.searchTerm
       
       })
@@ -72,37 +70,21 @@ export class HomeComponent implements OnInit {
   }
   
 
-  sortByVeg(){
-    console.log("button clicked")
-    this.api.sortByVeg().subscribe((res:any)=>{
-      this.foodData=res;
-      this.foodData.forEach((a:any)=>{
-        Object.assign(a,{quantity:1,total:a.price});
-      });
-    })
+ 
 
-  }
+  
 
-  sortByNonVeg(){
-    console.log("button clicked")
-    this.api.sortByNonVeg().subscribe((res:any)=>{
-      this.foodData=res;
-      this.foodData.forEach((a:any)=>{
-        Object.assign(a,{quantity:1,total:a.price});
-      });
-    })
+  
+  // sortByprice(){
+  //   console.log("button clicked")
+  //   this.api.sortByPrice().subscribe((res:any)=>{
+  //     this.medicineData=res;
+  //     this.medicineData.forEach((a:any)=>{
+  //       Object.assign(a,{quantity:1,total:a.price});
+  //     });
+  //   })
 
-  }
-  sortByprice(){
-    console.log("button clicked")
-    this.api.sortByPrice().subscribe((res:any)=>{
-      this.foodData=res;
-      this.foodData.forEach((a:any)=>{
-        Object.assign(a,{quantity:1,total:a.price});
-      });
-    })
-
-  }
+  // }
 
   
 
@@ -114,7 +96,7 @@ export class HomeComponent implements OnInit {
   row(row: any) {
     throw new Error('Method not implemented.');
   }
-  food(food: any) {
+  medicine(medicine: any) {
     throw new Error('Method not implemented.');
   }
 }

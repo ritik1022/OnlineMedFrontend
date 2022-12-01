@@ -1,10 +1,9 @@
-export class FoodModel{
-    id : number = 0;
-    category : string='';
-    cuisinename : string = '';
-    description : string = '';
-    foodname : string = '';
-    offers : string = '';
-    price : number = 0;
-    status : string = '';
+export class MedicineModel{
+    medicineId : number = 0;
+    
+    medicineDescription : string = '';
+    medicineName : string = '';
+    
+    medicinePrice : number = 0;
+    instock : string = '';
 }

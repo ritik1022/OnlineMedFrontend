@@ -5,6 +5,22 @@ body {
 	background-color:#f7f7f7;
   
 }
+header{
+  position: fixed;
+  width: 100%;
+  height:10%;
+  top: 0;
+  display: flex;
+  justify-content: space-evenly;
+  place-items: center;
+  background-color: rgb(3, 75, 138);
+  z-index: 2;
+ }
+ .logo{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 3.3em;
+ }
 * {box-sizing: border-box}
 
 /* Add padding to container elements */
@@ -71,7 +87,9 @@ button:hover {
   opacity:1;
 }
 
-
+.sec{
+  padding-top: 40%;
+}
 /* Change styles for signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .signupbtn {

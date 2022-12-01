@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
 
 body {
-	font-family: Montserrat,Arial, Helvetica, sans-serif;
+	font-family:Montserrat, sans-serif;
 	background-color:#f7f7f7;
   
 }
@@ -9,9 +9,10 @@ body {
 
 /* Add padding to container elements */
 .container {
-    padding: 5px;
+    padding: 20px;
+    padding-top: 300px;
       width:500px;
-      margin-top: 30px;
+      margin-top: 10px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -54,7 +55,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, sel
 
 /* Set a style for all buttons */
 button {
-  background-color: #eb5629;
+  background-color:#0a58ca;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -63,7 +64,7 @@ button {
   width: 100%;
   opacity: 0.9;
 	font-size:16px;
-	font-family: Montserrat,Arial, Helvetica, sans-serif;
+	font-family:Montserrat, sans-serif;
 	border-radius:10px;
 }
 
@@ -94,11 +95,11 @@ header{
  display: flex;
  justify-content: space-evenly;
  place-items: center;
- background-color: rgb(247, 82, 31);
+ background-color: rgb(3, 75, 138);
  z-index: 2;
 }
 .logo{
- font-family: smooch;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  color: white;
  font-size: 3.3em;
 }
@@ -124,7 +125,7 @@ header nav button:hover{
  height: 50px;
  border-radius: 25px;
  border: 0;
- background-color: rgba(248, 98, 52, 0.87);
+ background-color: rgb(3, 75, 138);
  color: white;
  font-family: montserrat;
  cursor: pointer;
